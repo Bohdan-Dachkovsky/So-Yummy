@@ -18,6 +18,7 @@
     "cors": "^2.8.5",
     "formik": "^2.4.2",
     "gh-pages": "^5.0.0",
+    "hooks": "^0.3.2",
     "lodash": "^4.17.21",
     "modern-normalize": "^2.0.0",
     "nanoid": "^4.0.2",
