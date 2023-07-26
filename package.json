@@ -1,0 +1,58 @@
+{
+  "name": "so-yummy",
+  "version": "1.0.0",
+  "description": "This project was created with [Create React App](https://github.com/facebook/create-react-app). To get acquainted and configure additional features [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).",
+  "main": "index.js",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.7",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
+    "browserslist": "^4.21.9",
+    "caniuse-lite": "^1.0.30001517",
+    "cors": "^2.8.5",
+    "formik": "^2.4.2",
+    "gh-pages": "^5.0.0",
+    "lodash": "^4.17.21",
+    "modern-normalize": "^2.0.0",
+    "nanoid": "^4.0.2",
+    "react": "^18.2.0",
+    "react-custom-checkbox": "^3.1.5",
+    "react-dom": "^18.1.0",
+    "react-loader-spinner": "^5.3.4",
+    "react-redux": "^8.1.1",
+    "react-responsive": "^9.0.2",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.7.3",
+    "react-toastify": "^9.1.3",
+    "redux-persist": "^6.0.0",
+    "styled-components": "^6.0.2",
+    "web-vitals": "^2.1.3",
+    "yup": "^1.2.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bohdan-Dachkovsky/So-Yummy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bohdan-Dachkovsky/So-Yummy/issues"
+  },
+  "homepage": "https://github.com/Bohdan-Dachkovsky/So-Yummy#readme"
+}
