@@ -1,30 +1,30 @@
 import { lazy } from 'react';
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import RestrictedRoute from './RestrictedRoute';
-import PrivateRoute from './PrivateRoute';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import RestrictedRoute from './components/RestrictedRoute';
+import PrivateRoute from './components/PrivateRoute';
 import { useDispatch } from 'react-redux';
-import Loader from './Loader/Loader';
+import Loader from './components/Loader/Loader';
 import { useAuth } from 'hooks';
 import { refreshUser } from 'redux/auth/operations';
 import { useState } from 'react';
 import THEME from 'theme';
 import { ThemeProvider } from '@mui/material';
 
-const WelcomePage = lazy(() => import('../pages/WelcomePage'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage'));
-const SigninPage = lazy(() => import('../pages/SigninPage'));
-const MainPage = lazy(() => import('../pages/MainPage'));
-const CategoriesPage = lazy(() => import('../pages/CategoriesPage'));
-const AddRecipePage = lazy(() => import('../pages/AddRecipePage'));
-const FavoritePage = lazy(() => import('../pages/FavoritePage'));
-const RecipePage = lazy(() => import('../pages/RecipePage'));
-const MyRecipesPage = lazy(() => import('../pages/MyRecipesPage'));
-const SearchPage = lazy(() => import('../pages/SearchPage'));
-const ShoppingListPage = lazy(() => import('../pages/ShoppingListPage'));
-const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
-const VerificationPage = lazy(() => import('../pages/VerificationPage'));
+const WelcomePage = lazy(() => import('./pages/WelcomePage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage'));
+const SigninPage = lazy(() => import('./pages/SigninPage'));
+const MainPage = lazy(() => import('./pages/MainPage'));
+const CategoriesPage = lazy(() => import('./pages/CategoriesPage'));
+const AddRecipePage = lazy(() => import('./pages/AddRecipePage'));
+const FavoritePage = lazy(() => import('./pages/FavoritePage'));
+const RecipePage = lazy(() => import('./pages/RecipePage'));
+const MyRecipesPage = lazy(() => import('./pages/MyRecipesPage'));
+const SearchPage = lazy(() => import('./pages/SearchPage'));
+const ShoppingListPage = lazy(() => import('./pages/ShoppingListPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const VerificationPage = lazy(() => import('./pages/VerificationPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
