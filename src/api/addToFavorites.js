@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { baseUrl } from 'constants';
 
-axios.defaults.baseURL = baseUrl;
+import { baseUrl } from 'constants';
+// axios.defaults.baseURL = baseUrl;
 
 const addToFavorites = async recipeId => {
   const res = await axios.patch(`favorites/${recipeId}`);

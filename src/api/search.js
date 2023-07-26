@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { baseUrl } from 'constants';
 
-axios.defaults.baseURL = baseUrl;
+// import { baseUrl } from 'constants';
+// axios.defaults.baseURL = baseUrl;
 
 const fetchSearchResults = async ({
   directory,

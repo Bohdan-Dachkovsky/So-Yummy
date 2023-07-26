@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { baseUrl } from 'constants';
 
-axios.defaults.baseURL = baseUrl;
-axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
+// import { baseUrl } from 'constants';
+// axios.defaults.baseURL = baseUrl;
+// axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 
 const addRecipe = async obj => {
   try {
