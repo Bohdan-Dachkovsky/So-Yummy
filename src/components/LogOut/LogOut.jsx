@@ -40,5 +40,5 @@ export function LogOut({ closeModal }) {
       </Backdrop>
     </>
   );
-  return createPortal(LogOutElement, document.getElementById('logout-root'));
+  return createPortal(LogOutElement, document.getElementById('logout'));
 }

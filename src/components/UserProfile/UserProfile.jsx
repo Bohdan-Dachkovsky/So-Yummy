@@ -139,8 +139,5 @@ export function UserProfile({ closeUserProfile, user }) {
       </Backdrop>
     </>
   );
-  return createPortal(
-    UserProfileElement,
-    document.getElementById('userprofile-root')
-  );
+  return createPortal(UserProfileElement, document.getElementById('users'));
 }
