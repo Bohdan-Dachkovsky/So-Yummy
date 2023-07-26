@@ -1,7 +1,7 @@
 {
   "name": "so-yummy",
   "version": "1.0.0",
-  "description": "This project was created with [Create React App](https://github.com/facebook/create-react-app). To get acquainted and configure additional features [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).",
+  "description": "Application of recepies",
   "main": "index.js",
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -54,5 +54,5 @@
   "bugs": {
     "url": "https://github.com/Bohdan-Dachkovsky/So-Yummy/issues"
   },
-  "homepage": "https://github.com/Bohdan-Dachkovsky/So-Yummy#readme"
+  "homepage": "https://Bohdan-Dachkovsky.github.io/So-Yummy"
 }
