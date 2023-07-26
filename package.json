@@ -15,6 +15,7 @@
     "bootstrap": "^5.3.1",
     "browserslist": "^4.21.9",
     "caniuse-lite": "^1.0.30001517",
+    "constants": "^0.0.2",
     "cors": "^2.8.5",
     "formik": "^2.4.2",
     "gh-pages": "^5.0.0",
