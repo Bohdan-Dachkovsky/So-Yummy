@@ -4,7 +4,7 @@ import axios from 'axios';
 // axios.defaults.baseURL = baseUrl;
 
 const getAllFavorites = async () => {
-  const res = await axios.get('favorites/all');
+  const res = await axios.get('favorite/all');
   return res.data;
 };
 
