@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import { COLOR, SIZE } from 'constants';
 
 export const Container = styled.section`
-  color: ${COLOR.second};
+  color: ${white};
   display: flex;
   flex-direction: column;
   width: 100vw;

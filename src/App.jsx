@@ -37,9 +37,9 @@ export const App = () => {
     setChecked(lsTheme === 'dark');
   }, []);
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
 
   const onTheme = e => {
     setChecked(e.target.checked);
