@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
+        "baseUrl": "./yummy/apis",
         "paths": {
             "ClientApp/*": [
                 "./ClientApp/*"
