@@ -9,7 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import { useDispatch } from "react-redux";
 import Loader from "./components/Loader/Loader";
 import { useAuth } from "hooks";
-import { refreshUser } from "redux/auth/operations";
+import { refreshUser } from "./redux/auth/operations";
 import { useState } from "react";
 import THEME from "theme";
 import { ThemeProvider } from "@mui/material";
