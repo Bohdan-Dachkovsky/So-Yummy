@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { SIZE } from 'constants';
+import { COLOR, SIZE } from 'constants';
 import {
   squareHeroMobile,
   squareHeroTablet,
@@ -103,7 +103,7 @@ export const HeroTitle = styled.section`
     margin-bottom: 14px;
     text-align: center;
 
-    color:black;
+    /* color: ${COLOR.dark}; */
     font-size: 60px;
     line-height: 1;
     letter-spacing: -0.3px;
@@ -125,7 +125,7 @@ export const HeroTitle = styled.section`
     }
 
     span {
-      color: #8BAA36;
+      color: ${COLOR.main};
     }
   }
 
@@ -133,7 +133,8 @@ export const HeroTitle = styled.section`
     max-width: 248px;
     margin: 0 auto;
     text-align: center;
-    color: #23262a;
+
+    /* color: #23262a; */
     font-size: 14px;
     line-height: ${18 / 14};
     letter-spacing: -0.28px;
