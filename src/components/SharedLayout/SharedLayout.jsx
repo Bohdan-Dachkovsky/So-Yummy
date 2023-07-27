@@ -1,14 +1,14 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import Loader from 'components/Loader/Loader';
-import { Footer } from 'components/Footer/Footer';
-import Header from 'components/Header/Header';
+import Loader from "../Loader/Loader";
+import { Footer } from "../Footer/Footer";
+import Header from "../Header/Header";
 
-import MotivatingModal from 'components/MotivatingModal/MotivatingModal';
-import { useAuth } from 'hooks';
+import MotivatingModal from "../MotivatingModal/MotivatingModal";
+import { useAuth } from "hooks";
 
 // import THEME from 'theme';
 
