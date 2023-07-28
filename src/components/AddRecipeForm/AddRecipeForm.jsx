@@ -4,10 +4,10 @@ import { Formik } from "formik";
 import { nanoid } from "nanoid";
 
 import API from "../../api";
-import RecipeDescriptionFields from "components/RecipeDescriptionFields/RecipeDescriptionFields";
-import RecipeIngredientsFields from "components/RecipeIngredientsFields/RecipeIngredientsFields";
-import RecipePreparationFields from "components/RecipePreparationFields/RecipePreparationFields";
-import RecipeSchema from "pages/AddRecipePage/RecipeValidationSchema";
+import RecipeDescriptionFields from "../RecipeDescriptionFields/RecipeDescriptionFields";
+import RecipeIngredientsFields from "../RecipeIngredientsFields/RecipeIngredientsFields";
+import RecipePreparationFields from "../RecipePreparationFields/RecipePreparationFields";
+import RecipeSchema from "../../pages/AddRecipePage/RecipeValidationSchema";
 
 import { RecipeForm, SubmitButton } from "./AddRecipeForm.styled";
 
