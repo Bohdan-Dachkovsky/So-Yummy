@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Formik } from 'formik';
-import { nanoid } from 'nanoid';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
+import { nanoid } from "nanoid";
 
-import API from 'api';
-import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
-import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
-import RecipePreparationFields from 'components/RecipePreparationFields/RecipePreparationFields';
-import RecipeSchema from 'pages/AddRecipePage/RecipeValidationSchema';
+import API from "../../api";
+import RecipeDescriptionFields from "components/RecipeDescriptionFields/RecipeDescriptionFields";
+import RecipeIngredientsFields from "components/RecipeIngredientsFields/RecipeIngredientsFields";
+import RecipePreparationFields from "components/RecipePreparationFields/RecipePreparationFields";
+import RecipeSchema from "pages/AddRecipePage/RecipeValidationSchema";
 
-import { RecipeForm, SubmitButton } from './AddRecipeForm.styled';
+import { RecipeForm, SubmitButton } from "./AddRecipeForm.styled";
 
 const AddRecipeForm = () => {
   const [picture, setPicture] = useState(null);
@@ -19,21 +19,21 @@ const AddRecipeForm = () => {
   return (
     <Formik
       initialValues={{
-        title: '',
-        description: '',
-        category: '',
-        time: '',
-        ingredients: [{ ingredient: '', measure: '', key: nanoid() }],
-        instructions: '',
+        title: "",
+        description: "",
+        category: "",
+        time: "",
+        ingredients: [{ ingredient: "", measure: "", key: nanoid() }],
+        instructions: "",
       }}
       validationSchema={RecipeSchema}
-      onSubmit={async values => {
+      onSubmit={async (values) => {
         const formData = new FormData();
-        formData.append('preview', picture);
+        formData.append("preview", picture);
 
         for (const key in values) {
-          if (key === 'ingredients') {
-            values[key].forEach(item => {
+          if (key === "ingredients") {
+            values[key].forEach((item) => {
               formData.append(
                 `ingredients[]`,
                 JSON.stringify({
@@ -42,9 +42,11 @@ const AddRecipeForm = () => {
                 })
               );
             });
-          } else if (key === 'instructions') {
-            const arr = values[key].split(/\r?\n/).filter(item => item.length);
-            arr.forEach(item => {
+          } else if (key === "instructions") {
+            const arr = values[key]
+              .split(/\r?\n/)
+              .filter((item) => item.length);
+            arr.forEach((item) => {
               formData.append(`instructions[]`, item);
             });
           } else {
@@ -58,7 +60,7 @@ const AddRecipeForm = () => {
         setIsSubmitting(false);
 
         if (response) {
-          navigate('/my');
+          navigate("/my");
         }
       }}
     >
