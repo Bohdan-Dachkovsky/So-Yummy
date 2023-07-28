@@ -1,5 +1,5 @@
-import { styled } from 'styled-components';
-import { SIZE, COLOR } from 'constants';
+import { styled } from "styled-components";
+import { SIZE, COLOR } from "constants";
 
 import {
   footerBottomBgImage,
@@ -8,7 +8,7 @@ import {
   footerBottomBgImageTabletRetina,
   footerBottomBgImageDesktop,
   footerBottomBgImageDesktopRetina,
-} from 'assets/images/footer';
+} from "../../../assets/images/footer";
 
 export const FooterWraper = styled.footer`
   position: relative;
