@@ -12,7 +12,7 @@ import {
   WrapperPhoto,
 } from "./ShoppingListItem.styled";
 
-import API from "../../api";
+import API from "../../../api";
 
 import { getStore } from "../../../redux/auth/operations";
 import { useDispatch } from "react-redux";
