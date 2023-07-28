@@ -1,11 +1,11 @@
-import * as yup from 'yup';
-import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { useAuth } from 'hooks';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import * as yup from "yup";
+import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { useAuth } from "hooks";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import SigninLink from '../SigninLink/SigninLink';
+import SigninLink from "../SigninLink/SigninLink";
 import {
   Box,
   FormRegister,
@@ -16,33 +16,33 @@ import {
   RegisterButtonWrapper,
   RegisterLabel,
   Warning,
-} from './RegisterForm.styled';
-import { ReactComponent as EmailIcon } from '../../../assets/images/signin/mail-01.svg';
-import { ReactComponent as LockIcon } from '../../../assets/images/signin/lock-02.svg';
-import { ReactComponent as ManIcon } from '../../../assets/images/signin/man-03.svg';
-import { ReactComponent as ErrorIcon } from '../../../assets/images/signin/error.svg';
-import { ReactComponent as ValidIcon } from '../../../assets/images/signin/iconvalid.svg';
-import { register } from 'redux/auth/operations';
+} from "./RegisterForm.styled";
+import { ReactComponent as EmailIcon } from "../../../assets/images/signin/mail-01.svg";
+import { ReactComponent as LockIcon } from "../../../assets/images/signin/lock-02.svg";
+import { ReactComponent as ManIcon } from "../../../assets/images/signin/man-03.svg";
+import { ReactComponent as ErrorIcon } from "../../../assets/images/signin/error.svg";
+import { ReactComponent as ValidIcon } from "../../../assets/images/signin/iconvalid.svg";
+import { register } from "../../redux/auth/operations";
 
-import { mailRegexp } from 'constants';
+import { mailRegexp } from "constants";
 import {
   ValidMessage,
   ValidationIcon,
-} from 'components/SignIn/SigninForm/SigninForm.styled';
+} from "components/SignIn/SigninForm/SigninForm.styled";
 
 const validationSchema = yup.object({
   name: yup
-    .string('Enter your name')
-    .min(3, 'Name should be of minimum 3 characters length')
-    .required('Name is required'),
+    .string("Enter your name")
+    .min(3, "Name should be of minimum 3 characters length")
+    .required("Name is required"),
   email: yup
-    .string('Enter your email')
-    .matches(mailRegexp, 'Enter a valid email')
-    .required('Email is required'),
+    .string("Enter your email")
+    .matches(mailRegexp, "Enter a valid email")
+    .required("Email is required"),
   password: yup
-    .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .string("Enter your password")
+    .min(8, "Password should be of minimum 8 characters length")
+    .required("Password is required"),
 });
 
 export default function RegisterForm() {
@@ -50,24 +50,24 @@ export default function RegisterForm() {
   const { isVerify, authError } = useAuth();
 
   function visitCount() {
-    var visited = Number(localStorage.getItem('visitCount'));
-    var current = Boolean(sessionStorage.getItem('session'));
+    var visited = Number(localStorage.getItem("visitCount"));
+    var current = Boolean(sessionStorage.getItem("session"));
     console.log(visited);
     console.log(current);
     if (!current) {
       visited++;
     }
 
-    localStorage.setItem('visitCount', visited);
-    sessionStorage.setItem('session', true);
+    localStorage.setItem("visitCount", visited);
+    sessionStorage.setItem("session", true);
 
     return visited;
   }
   const formik = useFormik({
     initialValues: {
-      name: '',
-      email: '',
-      password: '',
+      name: "",
+      email: "",
+      password: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values, { resetForm }) => {
@@ -79,29 +79,29 @@ export default function RegisterForm() {
     },
   });
 
-  const notify = msg => {
+  const notify = (msg) => {
     toast.success(msg, {
-      toastId: 'idEmailVerify',
+      toastId: "idEmailVerify",
     });
   };
 
-  const notifyError = msg => {
+  const notifyError = (msg) => {
     toast.error(msg, {
-      toastId: 'idError',
+      toastId: "idError",
     });
   };
   const handleClearEmail = () => {
-    formik.setFieldValue('email', '');
+    formik.setFieldValue("email", "");
   };
   const handleClearPassword = () => {
-    formik.setFieldValue('password', '');
+    formik.setFieldValue("password", "");
   };
   const handleClearName = () => {
-    formik.setFieldValue('name', '');
+    formik.setFieldValue("name", "");
   };
   return (
     <Box>
-      {isVerify && notify('Check your email to verify your profile')}
+      {isVerify && notify("Check your email to verify your profile")}
       {authError && notifyError(authError)}
       <FormRegister onSubmit={formik.handleSubmit}>
         <RegisterLabel>Registation</RegisterLabel>
@@ -109,10 +109,10 @@ export default function RegisterForm() {
         <RegisterInputWrapper
           className={
             formik.submitCount > 0 && formik.errors.name
-              ? 'input__error'
+              ? "input__error"
               : formik.touched.email && !formik.errors.name
-              ? 'input__valid'
-              : ''
+              ? "input__valid"
+              : ""
           }
         >
           <IconWrapper>
@@ -147,10 +147,10 @@ export default function RegisterForm() {
         <RegisterInputWrapper
           className={
             formik.submitCount > 0 && formik.errors.email
-              ? 'input__error'
+              ? "input__error"
               : formik.touched.email && !formik.errors.email
-              ? 'input__valid'
-              : ''
+              ? "input__valid"
+              : ""
           }
         >
           <IconWrapper>
@@ -185,10 +185,10 @@ export default function RegisterForm() {
         <RegisterInputWrapper
           className={
             formik.submitCount > 0 && formik.errors.password
-              ? 'input__error'
+              ? "input__error"
               : formik.touched.password && !formik.errors.password
-              ? 'input__valid'
-              : ''
+              ? "input__valid"
+              : ""
           }
         >
           <IconWrapper>
