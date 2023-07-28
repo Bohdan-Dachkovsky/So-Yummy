@@ -1,11 +1,11 @@
-import { useTheme } from '@mui/material';
+import { useTheme } from "@mui/material";
 import {
   FacebookLogo,
   InstagramLogo,
   SocialList,
   TwitterLogo,
   YoutubeLogo,
-} from './FollowUs.styled';
+} from "./FollowUs.styled";
 
 export function FollowUs({ hoverColor }) {
   const theme = useTheme();
@@ -15,7 +15,6 @@ export function FollowUs({ hoverColor }) {
         <a
           style={{ color: theme.palette.iconHeader }}
           href="https://www.facebook.com/"
-          target="_blank"
           rel="noreferrer"
         >
           <FacebookLogo />
@@ -25,7 +24,6 @@ export function FollowUs({ hoverColor }) {
         <a
           style={{ color: theme.palette.iconHeader }}
           href="https://www.youtube.com/"
-          target="_blank"
           rel="noreferrer"
         >
           <YoutubeLogo />
@@ -35,7 +33,6 @@ export function FollowUs({ hoverColor }) {
         <a
           style={{ color: theme.palette.iconHeader }}
           href="https://twitter.com/"
-          target="_blank"
           rel="noreferrer"
         >
           <TwitterLogo />
@@ -45,7 +42,6 @@ export function FollowUs({ hoverColor }) {
         <a
           style={{ color: theme.palette.iconHeader }}
           href="https://www.instagram.com/"
-          target="_blank"
           rel="noreferrer"
         >
           <InstagramLogo />
