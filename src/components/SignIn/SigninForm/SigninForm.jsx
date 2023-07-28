@@ -1,11 +1,11 @@
-import * as yup from 'yup';
-import { useFormik } from 'formik';
-import { useDispatch } from 'react-redux';
-import { useAuth } from 'hooks';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import * as yup from "yup";
+import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { useAuth } from "hooks";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import RegistrationLink from '../RegistrationLink/RegistrationLink';
+import RegistrationLink from "../RegistrationLink/RegistrationLink";
 import {
   Box,
   FormSignin,
@@ -18,44 +18,44 @@ import {
   ValidMessage,
   ValidationIcon,
   Warning,
-} from './SigninForm.styled';
-import { ReactComponent as EmailIcon } from '../../../assets/images/signin/mail-01.svg';
-import { ReactComponent as LockIcon } from '../../../assets/images/signin/lock-02.svg';
-import { ReactComponent as ErrorIcon } from '../../../assets/images/signin/error.svg';
-import { ReactComponent as ValidIcon } from '../../../assets/images/signin/iconvalid.svg';
-import { login } from 'redux/auth/operations';
+} from "./SigninForm.styled";
+import { ReactComponent as EmailIcon } from "../../../assets/images/signin/mail-01.svg";
+import { ReactComponent as LockIcon } from "../../../assets/images/signin/lock-02.svg";
+import { ReactComponent as ErrorIcon } from "../../../assets/images/signin/error.svg";
+import { ReactComponent as ValidIcon } from "../../../assets/images/signin/iconvalid.svg";
+import { login } from "../../../redux/auth/operations";
 
-import { mailRegexp } from 'constants';
+import { mailRegexp } from "constants";
 
 const validationSchema = yup.object({
   email: yup
-    .string('Enter your email')
-    .matches(mailRegexp, 'Enter a valid email')
-    .required('Email is required'),
+    .string("Enter your email")
+    .matches(mailRegexp, "Enter a valid email")
+    .required("Email is required"),
   password: yup
-    .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .string("Enter your password")
+    .min(8, "Password should be of minimum 8 characters length")
+    .required("Password is required"),
 });
 
 export default function SigninForm() {
   const dispatch = useDispatch();
   const { authError } = useAuth();
 
-  let updateStorages = storageValue => {
-    localStorage.setItem('last-session-value', storageValue);
-    sessionStorage.setItem('current-session', storageValue);
+  let updateStorages = (storageValue) => {
+    localStorage.setItem("last-session-value", storageValue);
+    sessionStorage.setItem("current-session", storageValue);
   };
 
   let getSessionCount = () => {
-    let lastSessionValue = localStorage.getItem('last-session-value');
+    let lastSessionValue = localStorage.getItem("last-session-value");
 
-    let registerValue = localStorage.getItem('visitCount');
-    if (lastSessionValue === '') {
+    let registerValue = localStorage.getItem("visitCount");
+    if (lastSessionValue === "") {
       updateStorages(Number(registerValue));
     } else if (
       lastSessionValue ||
-      sessionStorage.getItem('current-session') !== null
+      sessionStorage.getItem("current-session") !== null
     ) {
       lastSessionValue++;
       updateStorages(lastSessionValue);
@@ -64,12 +64,12 @@ export default function SigninForm() {
     return sessionValue;
   };
 
-  const session = localStorage.getItem('last-session-value');
+  const session = localStorage.getItem("last-session-value");
   console.log(Number(session));
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values, { resetForm }) => {
@@ -79,17 +79,17 @@ export default function SigninForm() {
     },
   });
 
-  const notifyError = msg => {
+  const notifyError = (msg) => {
     toast.error(msg, {
-      toastId: 'idError',
+      toastId: "idError",
     });
   };
 
   const handleClearEmail = () => {
-    formik.setFieldValue('email', '');
+    formik.setFieldValue("email", "");
   };
   const handleClearPassword = () => {
-    formik.setFieldValue('password', '');
+    formik.setFieldValue("password", "");
   };
   return (
     <Box>
@@ -100,10 +100,10 @@ export default function SigninForm() {
         <SigninInputWrapper
           className={
             formik.submitCount > 0 && formik.errors.email
-              ? 'input__error'
+              ? "input__error"
               : formik.touched.email && !formik.errors.email
-              ? 'input__valid'
-              : ''
+              ? "input__valid"
+              : ""
           }
         >
           <IconWrapper>
@@ -137,10 +137,10 @@ export default function SigninForm() {
         <SigninInputWrapper
           className={
             formik.submitCount > 0 && formik.errors.password
-              ? 'input__error'
+              ? "input__error"
               : formik.touched.password && !formik.errors.password
-              ? 'input__valid'
-              : ''
+              ? "input__valid"
+              : ""
           }
         >
           <IconWrapper>
