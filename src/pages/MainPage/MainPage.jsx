@@ -1,18 +1,21 @@
-import { ChooseYourBreakfast } from '../../components/ChooseYourBreakfast/ChooseYourBreakfast';
-import { PreviewCategories } from '../../components/PreviewCategories/PreviewCategories';
-import { Search } from '../../components/Search/Search';
+import { ChooseYourBreakfast } from "../../components/ChooseYourBreakfast/ChooseYourBreakfast";
+import { PreviewCategories } from "../../components/PreviewCategories/PreviewCategories";
+import { Search } from "../../components/Search/Search";
 
-import { Hero, HeroTitle, HeroWrapper } from './MainPage.styled';
-import { Container } from '../../components/Container/Container';
-import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
+import { Hero, HeroTitle, HeroWrapper } from "./MainPage.styled";
+import { Container } from "../../components/Container/Container";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
 
-import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
 
 // redux start
-import { fetchIngredients, fetchCategories } from 'redux/recipies/operations';
+import {
+  fetchIngredients,
+  fetchCategories,
+} from "../../redux/recipies/operations";
 // import { useRecipies } from 'hooks';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 //redux end
 
 export default function MainPage() {
