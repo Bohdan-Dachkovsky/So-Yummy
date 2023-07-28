@@ -1,9 +1,9 @@
-import { FollowUs } from '../../FollowUs/FollowUs';
-import { Nav } from './Nav/Nav';
-import { SubscribeForm } from './SubscribeForm/SubscribeForm';
-import { Container } from 'components/Container/Container';
+import { FollowUs } from "../../FollowUs/FollowUs";
+import { Nav } from "./Nav/Nav";
+import { SubscribeForm } from "./SubscribeForm/SubscribeForm";
+import { Container } from "../../Container/Container";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import {
   FollowUsContainer,
@@ -12,9 +12,9 @@ import {
   NavLogo,
   NavigationContainer,
   NavigationWrapper,
-} from './Navigation.styled';
-import { useTheme } from '@mui/material';
-import { COLOR } from 'constants';
+} from "./Navigation.styled";
+import { useTheme } from "@mui/material";
+import { COLOR } from "constants";
 
 export function Navigation() {
   const theme = useTheme();
