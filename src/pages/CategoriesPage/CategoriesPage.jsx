@@ -1,18 +1,18 @@
-import { Grid, Pagination, PaginationItem, useTheme } from '@mui/material';
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Grid, Pagination, PaginationItem, useTheme } from "@mui/material";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { Container } from '../../components/Container/Container';
-import CardCategorie from '../../components/CardCategorie/CardCategorie';
-import API from 'api';
-import Title from '../../components/Title/Title';
-import CategoriesList from './CategoriesList/CategoriesList';
-import NotFoundPage from '../NotFoundPage/NotFoundPage';
-import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
-import ContainerSection from '../../components/ContainerSection/ContainerSection';
-import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
-import Loader from '../../components/Loader/Loader';
-import { TRANSITION } from 'constants';
+import { Container } from "../../components/Container/Container";
+import CardCategorie from "../../components/CardCategorie/CardCategorie";
+import API from "../../api";
+import Title from "../../components/Title/Title";
+import CategoriesList from "./CategoriesList/CategoriesList";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
+import ContainerSection from "../../components/ContainerSection/ContainerSection";
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
+import Loader from "../../components/Loader/Loader";
+import { TRANSITION } from "constants";
 // import { COLOR } from 'constants';
 
 const CategoriesPage = () => {
@@ -24,7 +24,7 @@ const CategoriesPage = () => {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
 
-  const oneCategorie = async categoryName => {
+  const oneCategorie = async (categoryName) => {
     try {
       setLoader(true);
       const res = await API.fetchRecipies(categoryName);
@@ -32,7 +32,7 @@ const CategoriesPage = () => {
         setRecipieArr(res.recipes);
         setTotalPages(res?.totalPages);
         setPage(1);
-      } else throw new Error('dont find this categories');
+      } else throw new Error("dont find this categories");
     } catch (err) {
       setRecipieArr([]);
       setError(true);
@@ -44,7 +44,7 @@ const CategoriesPage = () => {
   // set RecipierArr and url to initial state
   useEffect(() => {
     const name =
-      categoryName === ':categoryName' || !categoryName ? 'beef' : categoryName;
+      categoryName === ":categoryName" || !categoryName ? "beef" : categoryName;
     oneCategorie(name);
     navigate(`/categories/${name}`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,7 +52,7 @@ const CategoriesPage = () => {
 
   useEffect(() => {
     const name =
-      categoryName === ':categoryName' || !categoryName ? 'beef' : categoryName;
+      categoryName === ":categoryName" || !categoryName ? "beef" : categoryName;
     oneCategorie(name);
     navigate(`/categories/${name}`);
   }, [categoryName, navigate]);
@@ -66,7 +66,7 @@ const CategoriesPage = () => {
       if (res?.recipes) {
         setRecipieArr(res?.recipes);
         setError(false);
-      } else throw new Error('dont find this category');
+      } else throw new Error("dont find this category");
     } catch (err) {
       setRecipieArr([]);
       setError(true);
@@ -74,7 +74,7 @@ const CategoriesPage = () => {
   };
 
   // transition to RecipePage
-  const chooseRecipe = id => {
+  const chooseRecipe = (id) => {
     navigate(`/recipe/${id}`);
   };
 
@@ -85,11 +85,11 @@ const CategoriesPage = () => {
           <Container>
             <ContainerSection>
               <Title>Categories</Title>
-              <CategoriesList onError={el => setError(el)} />
+              <CategoriesList onError={(el) => setError(el)} />
               <Grid
                 container
-                pt={{ xs: '32px', md: '50px' }}
-                mb={{ xs: '60px', md: '100px' }}
+                pt={{ xs: "32px", md: "50px" }}
+                mb={{ xs: "60px", md: "100px" }}
                 rowSpacing={{ xs: 3.5, md: 4, lg: 12.5 }}
                 columnSpacing={{ md: 4, lg: 1.5 }}
               >
@@ -109,12 +109,12 @@ const CategoriesPage = () => {
               {totalPages > 1 && (
                 <Pagination
                   sx={{
-                    width: 'max-content',
-                    borderRadius: '26px',
-                    p: '12px 18px',
-                    m: '50px auto 100px',
+                    width: "max-content",
+                    borderRadius: "26px",
+                    p: "12px 18px",
+                    m: "50px auto 100px",
                     backgroundColor: theme.palette.background.input,
-                    boxShadow: '0px 4px 4px 0px rgba(135, 135, 135, 0.20)',
+                    boxShadow: "0px 4px 4px 0px rgba(135, 135, 135, 0.20)",
                     transition: `${TRANSITION.forHoverBgColor}, ${TRANSITION.forHoverColor}`,
                   }}
                   count={totalPages}
@@ -123,18 +123,18 @@ const CategoriesPage = () => {
                   variant="outlined"
                   color="primary"
                   size="large"
-                  renderItem={item => (
+                  renderItem={(item) => (
                     <PaginationItem
                       sx={{
                         backgroundColor: item.selected
-                          ? theme.palette.background.paginator + '!important'
-                          : 'transparent',
+                          ? theme.palette.background.paginator + "!important"
+                          : "transparent",
                         color: item.selected
-                          ? theme.palette.paginator.active + '!important'
+                          ? theme.palette.paginator.active + "!important"
                           : theme.palette.paginator.inactive,
-                        border: 'none !important',
-                        fontFamily: 'Poppins',
-                        fontSize: '12px',
+                        border: "none !important",
+                        fontFamily: "Poppins",
+                        fontSize: "12px",
                         fontWeight: 500,
                         margin: 0,
                       }}

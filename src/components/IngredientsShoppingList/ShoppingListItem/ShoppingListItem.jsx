@@ -1,4 +1,4 @@
-import { useTheme } from '@mui/material';
+import { useTheme } from "@mui/material";
 import {
   BtnRemove,
   IconRemove,
@@ -10,14 +10,14 @@ import {
   Photo,
   Text,
   WrapperPhoto,
-} from './ShoppingListItem.styled';
+} from "./ShoppingListItem.styled";
 
-import API from 'api';
+import API from "../../api";
 
-import { getStore } from 'redux/auth/operations';
-import { useDispatch } from 'react-redux';
+import { getStore } from "redux/auth/operations";
+import { useDispatch } from "react-redux";
 
-const ShoppingListItem = props => {
+const ShoppingListItem = (props) => {
   const { shopId, _id, name, img, measure, recipeId } = props;
 
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const ShoppingListItem = props => {
   //   return measure.replace(num, num * count);
   // };
 
-  const toggleRecipeIngredient = async data => {
+  const toggleRecipeIngredient = async (data) => {
     try {
       const res = await API.toggleProduct(data.id, data.measure, data.recipeId);
       // console.log('success');
@@ -37,7 +37,7 @@ const ShoppingListItem = props => {
     }
   };
 
-  const handleClick = value => {
+  const handleClick = (value) => {
     toggleRecipeIngredient(value);
     dispatch(getStore());
   };
@@ -59,7 +59,7 @@ const ShoppingListItem = props => {
           onClick={() => handleClick({ id: _id, measure, recipeId })}
           style={{
             color: theme.palette.text.primary,
-            backgroundColor: 'transparent',
+            backgroundColor: "transparent",
           }}
         >
           <IconRemove viewBox="0 0 14 14">

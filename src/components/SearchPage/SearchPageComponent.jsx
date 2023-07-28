@@ -1,43 +1,43 @@
-import MainTitle from 'components/MainTitle/MainTitle';
-import API from 'api';
-import { NoSearchResults } from './NoSearchResults/NoSearchResults';
+import MainTitle from "components/MainTitle/MainTitle";
+import API from "../../api";
+import { NoSearchResults } from "./NoSearchResults/NoSearchResults";
 
-import { TitleContainer } from './SearchPageComponent.styled';
-import { SearchedRecipesList } from './SearchedRecipesList/SearchedRecipesList';
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { SearchInput } from './SearchInput/SearchInput';
-import { SearchTypeSelector } from './SearchTypeSelector/SearchTypeSelector';
-import ContainerSection from 'components/ContainerSection/ContainerSection';
-import { Container } from 'components/Container/Container';
-import Loader from 'components/Loader/Loader';
+import { TitleContainer } from "./SearchPageComponent.styled";
+import { SearchedRecipesList } from "./SearchedRecipesList/SearchedRecipesList";
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { SearchInput } from "./SearchInput/SearchInput";
+import { SearchTypeSelector } from "./SearchTypeSelector/SearchTypeSelector";
+import ContainerSection from "components/ContainerSection/ContainerSection";
+import { Container } from "components/Container/Container";
+import Loader from "components/Loader/Loader";
 
-import { useMediaQuery } from '@mui/material';
-import { Paginator } from 'components/Paginator/Paginator';
+import { useMediaQuery } from "@mui/material";
+import { Paginator } from "components/Paginator/Paginator";
 
 export const SearchPageComponent = () => {
   const [searchParams] = useSearchParams();
   const [selector, setSelector] = useState(
-    searchParams.get('i') ? 'ingredients' : 'title'
+    searchParams.get("i") ? "ingredients" : "title"
   );
   const [recipieArr, setRecipieArr] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const isLargeScreen = useMediaQuery('(min-width: 1440px)');
+  const isLargeScreen = useMediaQuery("(min-width: 1440px)");
   const cardsPerPage = isLargeScreen ? 12 : 6;
 
-  const getCards = async query => {
+  const getCards = async (query) => {
     const queryData = {
-      directory: 'recipes',
+      directory: "recipes",
       selector,
       query,
       page,
       cardsPerPage,
     };
-    if (selector === 'ingredients') {
-      queryData.directory = 'ingredients';
-      queryData.selector = 'ingredient';
+    if (selector === "ingredients") {
+      queryData.directory = "ingredients";
+      queryData.selector = "ingredient";
     }
     setRecipieArr(null);
     setIsLoading(true);
@@ -50,14 +50,14 @@ export const SearchPageComponent = () => {
       setRecipieArr(null);
     }
     setIsLoading(false);
-    window.scrollTo({ top: 100, behavior: 'smooth' });
+    window.scrollTo({ top: 100, behavior: "smooth" });
   };
 
   return (
     <Container>
       <ContainerSection>
         <TitleContainer>
-          <MainTitle title={'Search'} />
+          <MainTitle title={"Search"} />
         </TitleContainer>
         <SearchInput
           ver="mobile"
