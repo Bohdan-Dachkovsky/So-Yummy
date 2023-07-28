@@ -1,12 +1,12 @@
-import Logo from 'components/Logo/Logo';
-import Navigation from 'components/Navigation/Navigation';
-import UserLogo from 'components/UserLogo/UserLogo';
-import { HeaderContainer, BurgerBtn } from './Header.styled';
-import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
-import { Modal } from 'components/Modal/Modal';
-import { FormControlLabel, useTheme } from '@mui/material';
-import MaterialUISwitch from './MaterialUISwitch';
+import Logo from "../Logo/Logo";
+import Navigation from "../Navigation/Navigation";
+import UserLogo from "../UserLogo/UserLogo";
+import { HeaderContainer, BurgerBtn } from "./Header.styled";
+import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
+import { Modal } from "../Modal/Modal";
+import { FormControlLabel, useTheme } from "@mui/material";
+import MaterialUISwitch from "./MaterialUISwitch";
 
 const HeaderWrap = ({ onTheme }) => {
   const [isModalShown, setIsModalShown] = useState(false);
@@ -16,8 +16,8 @@ const HeaderWrap = ({ onTheme }) => {
     query: `(max-width: 1439px)`,
   });
 
-  const handleBurgerClick = e => {
-    setIsModalShown(prev => !prev);
+  const handleBurgerClick = (e) => {
+    setIsModalShown((prev) => !prev);
   };
 
   return (
@@ -26,7 +26,7 @@ const HeaderWrap = ({ onTheme }) => {
       {!isBurgerShown && !isModalShown && <Navigation />}
       <UserLogo />
       <FormControlLabel
-        checked={localStorage.getItem('theme') === 'dark'}
+        checked={localStorage.getItem("theme") === "dark"}
         onChange={onTheme}
         control={<MaterialUISwitch sx={{ ml: 5 }} />}
       />

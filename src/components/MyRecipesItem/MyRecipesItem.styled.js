@@ -1,8 +1,8 @@
-import { SIZE } from 'constants';
-import { styled } from 'styled-components';
-import { ReactComponent as IconRemove } from 'assets/images/favorite/Icon.svg';
-import { Link } from 'react-router-dom';
-import { TRANSITION } from 'constants';
+import { SIZE } from "constants";
+import { styled } from "styled-components";
+import { ReactComponent as IconRemove } from "../../assets/images/favorite/Icon.svg";
+import { Link } from "react-router-dom";
+import { TRANSITION } from "constants";
 
 export const Item = styled.li`
   position: relative;
@@ -159,25 +159,25 @@ export const BtnRemove = styled.button`
 
   transition: ${TRANSITION.forHoverBgColor}, ${TRANSITION.forHoverColor};
 
-  color: ${props => {
+  color: ${(props) => {
     switch (props.$pageName) {
-      case 'my':
-        return '#FAFAFA';
-      case 'favorite':
-        return '#22252A';
+      case "my":
+        return "#FAFAFA";
+      case "favorite":
+        return "#22252A";
       default:
-        return '#22252A';
+        return "#22252A";
     }
   }};
 
-  background-color: ${props => {
+  background-color: ${(props) => {
     switch (props.$pageName) {
-      case 'my':
-        return '#8BAA36';
-      case 'favorite':
-        return '#ebf3d4';
+      case "my":
+        return "#8BAA36";
+      case "favorite":
+        return "#ebf3d4";
       default:
-        return '#ebf3d4';
+        return "#ebf3d4";
     }
   }};
 
@@ -207,20 +207,20 @@ export const BtnRemove = styled.button`
 
   &:hover,
   &:focus {
-    ${props => {
-      if (props.$pageName === 'favorite') {
-        return 'color: #FAFAFA;';
+    ${(props) => {
+      if (props.$pageName === "favorite") {
+        return "color: #FAFAFA;";
       }
     }}
 
-    background-color: ${props => {
+    background-color: ${(props) => {
       switch (props.$pageName) {
-        case 'my':
-          return '#22252A';
-        case 'favorite':
-          return '#8BAA36';
+        case "my":
+          return "#22252A";
+        case "favorite":
+          return "#8BAA36";
         default:
-          return '#8BAA36';
+          return "#8BAA36";
       }
     }};
   }
@@ -257,14 +257,14 @@ export const BtnDetail = styled(Link)`
 
   transition: ${TRANSITION.forHoverBgColor};
 
-  background-color: ${props => {
+  background-color: ${(props) => {
     switch (props.$pageName) {
-      case 'my':
-        return '#8BAA36';
-      case 'favorite':
-        return '#22252A';
+      case "my":
+        return "#8BAA36";
+      case "favorite":
+        return "#22252A";
       default:
-        return '#22252A';
+        return "#22252A";
     }
   }};
 
@@ -287,14 +287,14 @@ export const BtnDetail = styled(Link)`
 
   &:hover,
   &:focus {
-    background-color: ${props => {
+    background-color: ${(props) => {
       switch (props.$pageName) {
-        case 'my':
-          return '#22252A';
-        case 'favorite':
-          return '#8BAA36';
+        case "my":
+          return "#22252A";
+        case "favorite":
+          return "#8BAA36";
         default:
-          return '#8BAA36';
+          return "#8BAA36";
       }
     }};
   }

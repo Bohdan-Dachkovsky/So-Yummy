@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import getPopularRecipes from 'api/getPopularRecipes';
+import getPopularRecipes from "../../api/getPopularRecipes";
 
 import {
   SectionContainer,
   SectionTitle,
   RecipesContainer,
-} from './PopularRecipe.styled';
+} from "./PopularRecipe.styled";
 
 const PopularRecipe = () => {
   const [popularRecipes, setPopularRecipes] = useState([]);

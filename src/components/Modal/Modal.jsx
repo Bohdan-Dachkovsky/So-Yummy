@@ -3,9 +3,9 @@ import {
   TopFrame,
   CloseBtn,
   NavigationContainer,
-} from './Modal.styled';
-import Logo from 'components/Logo/Logo';
-import Navigation from 'components/Navigation/Navigation';
+} from "./Modal.styled";
+import Logo from "../Logo/Logo";
+import Navigation from "../Navigation/Navigation";
 
 export const Modal = ({ closeModal }) => {
   return (
@@ -14,7 +14,7 @@ export const Modal = ({ closeModal }) => {
         <Logo />
         <CloseBtn onClick={closeModal}>
           <img
-            src={require('../../assets/images/modal/x.svg').default}
+            src={require("../../assets/images/modal/x.svg").default}
             alt="close"
           />
         </CloseBtn>

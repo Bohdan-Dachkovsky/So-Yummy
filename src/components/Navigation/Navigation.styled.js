@@ -1,7 +1,7 @@
-import { SIZE, COLOR } from 'constants';
-import { NavLink } from 'react-router-dom';
-import { styled } from 'styled-components';
-import { ReactComponent as SearchHeaderIcon } from 'assets/images/header/searchHeader.svg';
+import { SIZE, COLOR } from "constants";
+import { NavLink } from "react-router-dom";
+import { styled } from "styled-components";
+import { ReactComponent as SearchHeaderIcon } from "../../assets/images/header/searchHeader.svg";
 
 export const NavContainer = styled.nav`
   display: flex;

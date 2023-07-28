@@ -1,30 +1,30 @@
-import { Backdrop } from 'components/UserProfile/UserProfile.styled';
-import { CancelBtn, Container, LogOutBtn, Wrapper } from './LogOut.styled';
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
-import { logout } from 'redux/auth/operations';
+import { Backdrop } from "../UserProfile/UserProfile.styled";
+import { CancelBtn, Container, LogOutBtn, Wrapper } from "./LogOut.styled";
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "redux/auth/operations";
 
 export function LogOut({ closeModal }) {
   const dispatch = useDispatch();
 
-  const handleBackdropClick = event => {
-    if (event.target.id === 'logOutBackdrop') {
+  const handleBackdropClick = (event) => {
+    if (event.target.id === "logOutBackdrop") {
       closeModal();
     }
   };
 
   useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.key === 'Escape') {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
         closeModal();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [closeModal]);
   const LogOutElement = (
@@ -40,5 +40,5 @@ export function LogOut({ closeModal }) {
       </Backdrop>
     </>
   );
-  return createPortal(LogOutElement, document.getElementById('logout'));
+  return createPortal(LogOutElement, document.getElementById("logout"));
 }

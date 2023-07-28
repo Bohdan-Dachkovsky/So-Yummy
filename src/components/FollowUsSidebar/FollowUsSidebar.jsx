@@ -1,6 +1,6 @@
-import { FollowUs } from 'components/FollowUs/FollowUs';
+import { FollowUs } from "../FollowUs/FollowUs";
 
-import { SectionContainer, SectionTitle } from './FollowUsSidebar.styled';
+import { SectionContainer, SectionTitle } from "./FollowUsSidebar.styled";
 
 const FollowUsSidebar = () => {
   return (

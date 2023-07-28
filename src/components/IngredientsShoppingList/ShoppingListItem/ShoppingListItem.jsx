@@ -14,7 +14,7 @@ import {
 
 import API from "../../api";
 
-import { getStore } from "redux/auth/operations";
+import { getStore } from "../../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
 const ShoppingListItem = (props) => {

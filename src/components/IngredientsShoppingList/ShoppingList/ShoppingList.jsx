@@ -1,12 +1,12 @@
-import ShoppingListItem from '../ShoppingListItem/ShoppingListItem';
-import { WrapperList } from './ShoppingList.styled';
+import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
+import { WrapperList } from "./ShoppingList.styled";
 
-import { getStore } from 'redux/auth/operations';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { useAuth } from 'hooks';
+import { getStore } from "../../../redux/auth/operations";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useAuth } from "hooks";
 
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
 const ShoppingList = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const ShoppingList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const prepStore = inStore => {
+  const prepStore = (inStore) => {
     const outStore = inStore.map(({ id, measure, recipeId }) => {
       return {
         shopId: nanoid(),
