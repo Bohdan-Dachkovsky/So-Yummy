@@ -22,7 +22,7 @@ import { ReactComponent as LockIcon } from "../../../assets/images/signin/lock-0
 import { ReactComponent as ManIcon } from "../../../assets/images/signin/man-03.svg";
 import { ReactComponent as ErrorIcon } from "../../../assets/images/signin/error.svg";
 import { ReactComponent as ValidIcon } from "../../../assets/images/signin/iconvalid.svg";
-import { register } from "../../redux/auth/operations";
+import { register } from "../../../redux/auth/operations";
 
 import {
   ValidMessage,
