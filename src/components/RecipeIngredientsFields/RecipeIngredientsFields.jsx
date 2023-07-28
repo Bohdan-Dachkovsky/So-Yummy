@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useFormikContext, FieldArray, ErrorMessage } from 'formik';
-import { useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
+import { useState, useEffect } from "react";
+import { useFormikContext, FieldArray, ErrorMessage } from "formik";
+import { useDispatch } from "react-redux";
+import { nanoid } from "nanoid";
 
-import { fetchIngredients } from 'redux/recipies/operations';
+import { fetchIngredients } from "../../redux/recipies/operations";
 
-import { useRecipies } from 'hooks';
+import { useRecipies } from "hooks";
 import {
   SectionContainer,
   SectionTitle,
@@ -21,7 +21,7 @@ import {
   ButtonRemove,
   IngredientError,
   AmountError,
-} from './RecipeIngredientsFields.styled';
+} from "./RecipeIngredientsFields.styled";
 
 const RecipeIngredientsFields = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const RecipeIngredientsFields = () => {
   }, []);
 
   const increaseCounter = () => {
-    values.ingredients.push({ ingredient: '', measure: '', key: nanoid() });
+    values.ingredients.push({ ingredient: "", measure: "", key: nanoid() });
     setCounter(counter + 1);
   };
 
@@ -48,7 +48,7 @@ const RecipeIngredientsFields = () => {
     }
   };
 
-  const ingredientsOptions = (ingredients || []).map(ingredient => {
+  const ingredientsOptions = (ingredients || []).map((ingredient) => {
     return { value: ingredient._id, label: ingredient.name };
   });
 
@@ -116,7 +116,7 @@ const RecipeIngredientsFields = () => {
                       classNamePrefix="Select"
                       options={ingredientsOptions}
                       placeholder="Ingredient"
-                      onChange={option =>
+                      onChange={(option) =>
                         setFieldValue(
                           `ingredients[${index}].ingredient`,
                           option.value

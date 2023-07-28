@@ -2,11 +2,11 @@ import {
   RecipeHero,
   RecipeDeskr,
   TimeContainer,
-} from './RecipePageHero.styled';
-import SkewButton from 'components/SkewButton/SkewButton';
-import MainTitle from 'components/MainTitle/MainTitle';
-import API from 'api';
-import { useState, useEffect } from 'react';
+} from "./RecipePageHero.styled";
+import SkewButton from "../SkewButton/SkewButton";
+import MainTitle from " ../MainTitle/MainTitle";
+import API from "api";
+import { useState, useEffect } from "react";
 //import { useParams } from 'react-router-dom';
 
 export const RecipePageHero = ({
@@ -26,12 +26,12 @@ export const RecipePageHero = ({
         console.log(res);
         let value = true;
         if (res.favoriteRecipeInfo.length > 1 && value) {
-          localStorage.setItem('existFavorite', 1);
+          localStorage.setItem("existFavorite", 1);
           value = false;
         }
 
-        if (res.some(item => item === recipeId)) {
-          console.log('it is favorite');
+        if (res.some((item) => item === recipeId)) {
+          console.log("it is favorite");
 
           setIsAddedToFavorite(true);
         }
@@ -49,7 +49,7 @@ export const RecipePageHero = ({
   const minutes = +time - hours * 60;
   //const id = recipeId;
 
-  const addToFav = async recipeId => {
+  const addToFav = async (recipeId) => {
     try {
       const res = await API.addToFavorites(recipeId);
       setIsFavorite(true);
@@ -60,7 +60,7 @@ export const RecipePageHero = ({
     }
   };
 
-  const removeFromFav = async recipeId => {
+  const removeFromFav = async (recipeId) => {
     try {
       const res = await API.removeFromFavorites(recipeId);
       setIsFavorite(false);
@@ -71,7 +71,7 @@ export const RecipePageHero = ({
     }
   };
 
-  const handleBtnClick = e => {
+  const handleBtnClick = (e) => {
     // console.log(e.target);
     // console.log(isFavorite);
 
@@ -89,27 +89,27 @@ export const RecipePageHero = ({
 
   return (
     <RecipeHero>
-      <MainTitle title={title} color={'#8baa36'} />
+      <MainTitle title={title} color={"#8baa36"} />
       <RecipeDeskr>{descr}</RecipeDeskr>
       <div onClick={handleBtnClick}>
         <SkewButton
-          bgColor={'transparent'}
+          bgColor={"transparent"}
           paddingHxs={12}
           paddingHmd={22}
           paddingHlg={22}
           paddingWxs={24}
           paddingWmd={44}
           paddingWlg={44}
-          borderColor={'green'}
+          borderColor={"green"}
         >
           {isAddedToFavorite || isFavorite
-            ? 'Remove from favorite'
-            : 'Add to favorite recipes'}
+            ? "Remove from favorite"
+            : "Add to favorite recipes"}
         </SkewButton>
       </div>
       <TimeContainer>
         <img
-          src={require('../../assets/images/recipePage/clock.svg').default}
+          src={require("../../assets/images/recipePage/clock.svg").default}
           alt="clock"
         />
         <p>{hours !== 0 ? `${hours} h ${minutes} min` : `${minutes} min`}</p>

@@ -1,5 +1,5 @@
-import MyRecipesItem from 'components/MyRecipesItem/MyRecipesItem';
-import { WrapperList } from './MyRecipesList.styled';
+import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
+import { WrapperList } from "./MyRecipesList.styled";
 
 const MyRecipesList = ({ ...otherProps }) => {
   return (

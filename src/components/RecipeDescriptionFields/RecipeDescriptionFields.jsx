@@ -1,12 +1,12 @@
-import { useRef, useState, useEffect } from 'react';
-import { useFormikContext } from 'formik';
-import { useDispatch } from 'react-redux';
+import { useRef, useState, useEffect } from "react";
+import { useFormikContext } from "formik";
+import { useDispatch } from "react-redux";
 
-import { fetchCategories } from 'redux/recipies/operations';
-import CustomValueContainer from './CustomValueContainer';
-import blank from '../../assets/images/addRecipe/blank.png';
-import { timeOptions } from 'utils/selectors';
-import { useRecipies } from 'hooks';
+import { fetchCategories } from "../../redux/recipies/operations";
+import CustomValueContainer from "./CustomValueContainer";
+import blank from "../../assets/images/addRecipe/blank.png";
+import { timeOptions } from "utils/selectors";
+import { useRecipies } from "hooks";
 import {
   SectionContainer,
   ImageHolder,
@@ -17,7 +17,7 @@ import {
   StyledSelect,
   InputErrorHandle,
   ErrorField,
-} from './RecipeDescriptionFields.styled';
+} from "./RecipeDescriptionFields.styled";
 
 const RecipeDescriptionFields = ({ setPicture, errors, touched }) => {
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const RecipeDescriptionFields = ({ setPicture, errors, touched }) => {
     setPicture(target.files[0]);
   };
 
-  const categoriesOptions = (categories || []).map(category => {
+  const categoriesOptions = (categories || []).map((category) => {
     return { value: category.toLowerCase(), label: category };
   });
 
@@ -99,13 +99,13 @@ const RecipeDescriptionFields = ({ setPicture, errors, touched }) => {
             classNamePrefix="Select"
             options={categoriesOptions}
             placeholder="Category"
-            onChange={e => (values.category = e.value)}
+            onChange={(e) => (values.category = e.value)}
             menuShouldBlockScroll={true}
             components={{
               ValueContainer: CustomValueContainer,
             }}
           />
-          {errors.category && touched.category && values.category === '' ? (
+          {errors.category && touched.category && values.category === "" ? (
             <ErrorField>{errors.category}</ErrorField>
           ) : null}
         </InputErrorHandle>
@@ -115,12 +115,12 @@ const RecipeDescriptionFields = ({ setPicture, errors, touched }) => {
             classNamePrefix="Select"
             options={timeOptions}
             placeholder="Cooking time"
-            onChange={e => (values.time = e.value)}
+            onChange={(e) => (values.time = e.value)}
             components={{
               ValueContainer: CustomValueContainer,
             }}
           />
-          {errors.time && touched.time && values.time === '' ? (
+          {errors.time && touched.time && values.time === "" ? (
             <ErrorField>{errors.time}</ErrorField>
           ) : null}
         </InputErrorHandle>

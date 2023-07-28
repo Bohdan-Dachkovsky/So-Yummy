@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
-import { Container } from 'components/Container/Container';
+import { Container } from "../Container/Container";
 import {
   CategoriesBox,
   CategoriesList,
@@ -10,13 +10,13 @@ import {
   RecipesLink,
   RecipesList,
   SeeAllBtn,
-} from './PreviewCategories.styled';
+} from "./PreviewCategories.styled";
 
-import plug from 'assets/images/PreviewCategories/1.jpg';
-import { SIZE } from 'constants';
-import API from 'api';
-import Loader from 'components/Loader/Loader';
-import { CardContent, styled } from '@mui/material';
+import plug from "../../assets/images/PreviewCategories/1.jpg";
+import { SIZE } from "constants";
+import API from "api";
+import Loader from "../Loader/Loader";
+import { CardContent, styled } from "@mui/material";
 
 export function PreviewCategories() {
   const [amountRecipe, setAmountRecipe] = useState(0);
@@ -68,7 +68,7 @@ export function PreviewCategories() {
         <CategoriesBox>
           {Object.keys(mainPageRecipes).length !== 0 ? (
             <CategoriesList>
-              {Object.keys(mainPageRecipes).map(name => {
+              {Object.keys(mainPageRecipes).map((name) => {
                 return (
                   <li key={name}>
                     <h2>{name}</h2>
@@ -76,14 +76,14 @@ export function PreviewCategories() {
                       <RecipesList>
                         {mainPageRecipes[name]
                           .slice(0, amountRecipe)
-                          .map(recipe => {
+                          .map((recipe) => {
                             return (
                               <li key={recipe._id}>
                                 <RecipesLink
                                   onClick={() => {
                                     window.scrollTo({
                                       top: 0,
-                                      behavior: 'smooth',
+                                      behavior: "smooth",
                                     });
                                   }}
                                   to={`/recipe/${recipe._id}`}
@@ -104,7 +104,7 @@ export function PreviewCategories() {
 
                     <SeeAllBtn
                       onClick={() => {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                       to={`/categories/${name.toLowerCase()}`}
                     >
@@ -120,7 +120,7 @@ export function PreviewCategories() {
 
           <OtherBtn
             onClick={() => {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             to="/categories/beef"
           >
