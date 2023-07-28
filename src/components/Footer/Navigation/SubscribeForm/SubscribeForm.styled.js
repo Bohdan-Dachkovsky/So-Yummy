@@ -1,7 +1,7 @@
-import { styled } from 'styled-components';
-import { SIZE, COLOR, TRANSITION } from 'constants';
+import { styled } from "styled-components";
+import { SIZE, COLOR, TRANSITION } from "constants";
 
-import { ReactComponent as MailIcon } from 'assets/images/footer/mail.svg';
+import { ReactComponent as MailIcon } from "../../../../assets/images/footer/mail.svg";
 
 export const SubscribeFormComponent = styled.form`
   display: flex;

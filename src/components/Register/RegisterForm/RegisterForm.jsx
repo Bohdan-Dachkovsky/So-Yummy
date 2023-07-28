@@ -24,11 +24,12 @@ import { ReactComponent as ErrorIcon } from "../../../assets/images/signin/error
 import { ReactComponent as ValidIcon } from "../../../assets/images/signin/iconvalid.svg";
 import { register } from "../../redux/auth/operations";
 
-import { mailRegexp } from "constants";
 import {
   ValidMessage,
   ValidationIcon,
-} from "components/SignIn/SigninForm/SigninForm.styled";
+} from "../../SignIn/SigninForm/SigninForm.styled";
+
+import { mailRegexp } from "constants";
 
 const validationSchema = yup.object({
   name: yup

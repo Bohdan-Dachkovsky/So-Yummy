@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchCategories } from "../../redux/recipies/operations";
 import CustomValueContainer from "./CustomValueContainer";
 import blank from "../../assets/images/addRecipe/blank.png";
-import { timeOptions } from "utils/selectors";
+import { timeOptions } from "../../utils/selectors";
 import { useRecipies } from "hooks";
 import {
   SectionContainer,
