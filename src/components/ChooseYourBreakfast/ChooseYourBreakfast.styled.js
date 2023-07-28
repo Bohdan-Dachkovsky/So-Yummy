@@ -1,5 +1,5 @@
-import { styled } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 import {
   Arrow,
@@ -9,10 +9,10 @@ import {
   saladTabletRetina,
   saladDesktop,
   saladDesktopRetina,
-} from 'assets/images/chooseYourBreakfast';
-import { ArrowHero } from 'assets/images/hero';
+} from "../../assets/images/chooseYourBreakfast";
+import { ArrowHero } from "../../assets/images/hero";
 
-import { SIZE, COLOR, TRANSITION } from 'constants';
+import { SIZE, COLOR, TRANSITION } from "constants";
 
 export const BreakfastContainer = styled.div`
   position: relative;
