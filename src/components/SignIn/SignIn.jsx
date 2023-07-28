@@ -1,6 +1,6 @@
-import SigninForm from 'components/SignIn/SigninForm/SigninForm';
-import AuthImg from 'components/AuthContainer/AuthImg';
-import AuthContainer from 'components/AuthContainer/AuthContainer';
+import SigninForm from "./SignIn/SigninForm/SigninForm";
+import AuthImg from "../AuthContainer/AuthImg";
+import AuthContainer from "../AuthContainer/AuthContainer";
 
 export default function Signin() {
   return (
