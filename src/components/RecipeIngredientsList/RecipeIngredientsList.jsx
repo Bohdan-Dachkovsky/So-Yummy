@@ -1,4 +1,4 @@
-import { IngrItemMUI } from './IngrItemMUI';
+import { IngrItemMUI } from "./IngrItemMUI";
 import {
   MainSection,
   ListHead,
@@ -10,19 +10,19 @@ import {
   MeasureCont,
   // Checked,
   //Unchecked,
-} from './RecipeIngredientsList.styled';
+} from "./RecipeIngredientsList.styled";
 
-import { useMediaQuery } from 'react-responsive';
-import { useEffect } from 'react';
-import Checkbox from 'react-custom-checkbox';
-import { SIZE } from 'constants';
-import API from 'api';
+import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
+import Checkbox from "react-custom-checkbox";
+import { SIZE } from "constants";
+import API from "../../api";
 
 //import { fetchIngredients } from 'redux/recipies/operations';
 //import { selectIngredients } from 'redux/recipies/selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { getStore } from 'redux/auth/operations';
-import { selectStore } from 'redux/auth/selectors';
+import { useDispatch, useSelector } from "react-redux";
+import { getStore } from "../../redux/auth/operations";
+import { selectStore } from "../../redux/auth/selectors";
 
 export const RecipeIngredientsList = ({ ingredients, recipeId }) => {
   const shoppingList = useSelector(selectStore);
@@ -45,15 +45,15 @@ export const RecipeIngredientsList = ({ ingredients, recipeId }) => {
 
   const setPlaceholderByWidth = () => {
     if (isMobile) {
-      return require('../../assets/images/recipePage/ingrMob.png').default;
+      return require("../../assets/images/recipePage/ingrMob.png").default;
     } else if (isTablet) {
-      return require('../../assets/images/recipePage/ingrTab.png').default;
+      return require("../../assets/images/recipePage/ingrTab.png").default;
     } else {
-      return require('../../assets/images/recipePage/ingrDesk.png').default;
+      return require("../../assets/images/recipePage/ingrDesk.png").default;
     }
   };
 
-  const toggleRecipeIngredient = async data => {
+  const toggleRecipeIngredient = async (data) => {
     try {
       const res = await API.toggleProduct(data.id, data.measure, data.recipeId);
       // console.log('success');
@@ -64,7 +64,7 @@ export const RecipeIngredientsList = ({ ingredients, recipeId }) => {
   };
 
   const handleCheck = (value, event) => {
-    console.log('checkbox click');
+    console.log("checkbox click");
 
     toggleRecipeIngredient(value);
   };
@@ -90,7 +90,7 @@ export const RecipeIngredientsList = ({ ingredients, recipeId }) => {
               <Checkbox
                 checked={
                   shoppingList &&
-                  shoppingList.some(item => item.id._id === id._id)
+                  shoppingList.some((item) => item.id._id === id._id)
                     ? true
                     : false
                 }
@@ -101,7 +101,7 @@ export const RecipeIngredientsList = ({ ingredients, recipeId }) => {
                 icon={
                   <img
                     src={
-                      require('../../assets/images/recipePage/pick.svg').default
+                      require("../../assets/images/recipePage/pick.svg").default
                     }
                     alt="checkbox"
                     style={{ width: isMobile ? 10 : 20 }}
