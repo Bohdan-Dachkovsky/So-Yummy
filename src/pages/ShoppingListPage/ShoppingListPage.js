@@ -1,10 +1,10 @@
-import { Container } from "../../Container/Container";
-import ShoppingList from "../../IngredientsShoppingList/ShoppingList/ShoppingList";
-import ThemeWrap from "../../SharedLayout/SharedLayoutStyled";
-import Title from "../../Title/Title";
-import ContainerSection from "../../ContainerSection/ContainerSection";
+import { Container } from "../../components/Container/Container";
+import ShoppingList from "../../components/IngredientsShoppingList/ShoppingList/ShoppingList";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
+import Title from "../../components/Title/Title";
+import ContainerSection from "../../components/ContainerSection/ContainerSection";
 import { ContainerItem, ContainerPosition } from "./ShoppingListPage.styled";
-import { FooterBgWrapper } from "../../FooterBgWrapper/FooterBgWrapper.styled";
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
 
 const ShoppingListPage = () => {
   return (
