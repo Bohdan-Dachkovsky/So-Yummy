@@ -14,7 +14,7 @@ import {
 
 import plug from "../../assets/images/PreviewCategories/1.jpg";
 import { SIZE } from "constants";
-import API from "api";
+import API from "../../api";
 import Loader from "../Loader/Loader";
 import { CardContent, styled } from "@mui/material";
 
