@@ -4,7 +4,7 @@ import {
   TimeContainer,
 } from "./RecipePageHero.styled";
 import SkewButton from "../SkewButton/SkewButton";
-import MainTitle from " ../MainTitle/MainTitle";
+import MainTitle from "../MainTitle/MainTitle";
 import API from "../../api";
 import { useState, useEffect } from "react";
 //import { useParams } from 'react-router-dom';
