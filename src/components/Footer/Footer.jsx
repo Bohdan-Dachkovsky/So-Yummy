@@ -1,6 +1,6 @@
-import ThemeWrap from 'components/SharedLayout/SharedLayoutStyled';
-import { CopyrightContainer, FooterWraper } from './Footer.styled';
-import { Navigation } from './Navigation/Navigation';
+import { ThemeWrap } from "../SharedLayout/SharedLayoutStyled";
+import { CopyrightContainer, FooterWraper } from "./Footer.styled";
+import { Navigation } from "./Navigation/Navigation";
 
 export function Footer() {
   return (

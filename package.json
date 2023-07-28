@@ -19,6 +19,7 @@
     "constants-browserify": "^1.0.0",
     "core-js": "^3.31.1",
     "cors": "^2.8.5",
+    "eslint-config": "^0.3.0",
     "formik": "^2.4.2",
     "gh-pages": "^5.0.0",
     "hooks": "^0.3.2",
@@ -57,7 +58,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "browserslist": {
     "production": [
