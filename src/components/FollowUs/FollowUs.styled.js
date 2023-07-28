@@ -1,7 +1,12 @@
-import { styled } from 'styled-components';
-import { SIZE, COLOR, TRANSITION } from 'constants';
+import { styled } from "styled-components";
+import { SIZE, COLOR, TRANSITION } from "constants";
 
-import { Facebook, Instagram, Twitter, Youtube } from 'assets/images/followUs';
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "../../assets/images/followUs";
 
 export const SocialList = styled.ul`
   margin: 0;
@@ -20,7 +25,7 @@ export const SocialList = styled.ul`
     transition: ${TRANSITION.forHoverColor};
     &:hover,
     &:focus {
-      color: ${props => props.$hovercolor};
+      color: ${(props) => props.$hovercolor};
     }
   }
 
