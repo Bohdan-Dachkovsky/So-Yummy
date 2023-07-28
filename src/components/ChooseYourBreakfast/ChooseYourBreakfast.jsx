@@ -9,7 +9,6 @@ import WrapBreakfast from './WrapBreakfast';
 export function ChooseYourBreakfast() {
   return (
     <BreakfastContainer>
-      {/* <div> */}
       <WrapBreakfast>
         <p>
           <span>Delicious and healthy</span> way to enjoy a variety of fresh
@@ -25,7 +24,6 @@ export function ChooseYourBreakfast() {
           <ArrowRight />
         </SeeRecipesBtn>
       </WrapBreakfast>
-      {/* </div> */}
       <HeroArrowIcon />
     </BreakfastContainer>
   );

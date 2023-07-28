@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 //import getRecipeById from 'api/recipeById';
 import { useParams } from 'react-router';
 import API from 'api';
-import { RecipePageHero } from 'components/RecipePageHero/RecipePageHero';
-import { RecipeIngredientsList } from 'components/RecipeIngredientsList/RecipeIngredientsList';
-import { RecipePreparation } from 'components/RecipePreparation/RecipePreparation';
-import ThemeWrap from 'components/SharedLayout/SharedLayoutStyled';
-import { FooterBgWrapper } from 'components/FooterBgWrapper/FooterBgWrapper.styled';
+import { RecipePageHero } from '../../components/RecipePageHero/RecipePageHero';
+import { RecipeIngredientsList } from '../../components/RecipeIngredientsList/RecipeIngredientsList';
+import { RecipePreparation } from '../../components/RecipePreparation/RecipePreparation';
+import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
+import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
 
 const RecipePage = () => {
   // const navigate = useNavigate();

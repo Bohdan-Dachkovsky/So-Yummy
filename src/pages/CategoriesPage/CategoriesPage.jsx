@@ -2,16 +2,16 @@ import { Grid, Pagination, PaginationItem, useTheme } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { Container } from 'components/Container/Container';
-import CardCategorie from 'components/CardCategorie/CardCategorie';
+import { Container } from '../../components/Container/Container';
+import CardCategorie from '../../components/CardCategorie/CardCategorie';
 import API from 'api';
-import Title from 'components/Title/Title';
+import Title from '../../components/Title/Title';
 import CategoriesList from './CategoriesList/CategoriesList';
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
-import ThemeWrap from 'components/SharedLayout/SharedLayoutStyled';
-import ContainerSection from 'components/ContainerSection/ContainerSection';
-import { FooterBgWrapper } from 'components/FooterBgWrapper/FooterBgWrapper.styled';
-import Loader from 'components/Loader/Loader';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
+import ContainerSection from '../../components/ContainerSection/ContainerSection';
+import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
+import Loader from '../../components/Loader/Loader';
 import { TRANSITION } from 'constants';
 // import { COLOR } from 'constants';
 

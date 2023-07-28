@@ -1,6 +1,6 @@
 import { Box, Tab, Tabs } from '@mui/material';
 import API from 'api';
-import Loader from 'components/Loader/Loader';
+import Loader from '../../../components/Loader/Loader';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 

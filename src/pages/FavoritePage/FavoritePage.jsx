@@ -1,14 +1,14 @@
 import { createTheme } from '@mui/system';
 import API from 'api';
-import { Container } from 'components/Container/Container';
-import ContainerSection from 'components/ContainerSection/ContainerSection';
-import { FooterBgWrapper } from 'components/FooterBgWrapper/FooterBgWrapper.styled';
-import Loader from 'components/Loader/Loader';
-import MyRecipesList from 'components/MyRecipesList/MyRecipesList';
-import { Paginator } from 'components/Paginator/Paginator';
-import { NoSearchResults } from 'components/SearchPage/NoSearchResults/NoSearchResults';
-import ThemeWrap from 'components/SharedLayout/SharedLayoutStyled';
-import Title from 'components/Title/Title';
+import { Container } from '../../components/Container/Container';
+import ContainerSection from '../../components/ContainerSection/ContainerSection';
+import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
+import Loader from '../../components/Loader/Loader';
+import MyRecipesList from '../../components/MyRecipesList/MyRecipesList';
+import { Paginator } from '../../components/Paginator/Paginator';
+import { NoSearchResults } from '../../components/SearchPage/NoSearchResults/NoSearchResults';
+import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
+import Title from '../../components/Title/Title';
 
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';

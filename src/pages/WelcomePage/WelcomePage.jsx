@@ -6,7 +6,7 @@ import {
   BtnContainer,
   BtnText,
 } from './WelcomePage.styled';
-import SkewButton from 'components/SkewButton/SkewButton';
+import SkewButton from '../../components/SkewButton/SkewButton';
 
 export default function WelcomePage() {
   return (

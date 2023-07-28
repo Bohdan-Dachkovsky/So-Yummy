@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { FooterBgWrapper } from 'components/FooterBgWrapper/FooterBgWrapper.styled';
+import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
 
 const NotFoundPage = () => {
   return (

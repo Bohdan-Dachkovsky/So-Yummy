@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import Signin from "components/SignIn/SignIn";
+import Signin from "../../components/SignIn/SignIn";
 import { useDispatch } from "react-redux";
 import { verify } from "../../redux/auth/operations";
 
