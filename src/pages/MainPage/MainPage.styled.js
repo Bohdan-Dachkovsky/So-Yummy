@@ -1,6 +1,6 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
 
-import { COLOR, SIZE } from 'constants';
+import { COLOR, SIZE } from "constants";
 import {
   squareHeroMobile,
   squareHeroTablet,
@@ -17,7 +17,7 @@ import {
   topBgHeroTabletRetina,
   topBgHeroDesktop,
   topBgHeroDesktopRetina,
-} from 'assets/images/hero';
+} from "../../assets/images/hero";
 
 export const Hero = styled.section`
   background-image: url(${bottomBgHeroMobile}), url(${squareHeroMobile}),
