@@ -1,4 +1,4 @@
-import SigninForm from "./SignIn/SigninForm/SigninForm";
+import SigninForm from "../SignIn/SigninForm/SigninForm";
 import AuthImg from "../AuthContainer/AuthImg";
 import AuthContainer from "../AuthContainer/AuthContainer";
 
