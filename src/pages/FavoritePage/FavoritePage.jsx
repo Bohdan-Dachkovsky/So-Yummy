@@ -1,22 +1,22 @@
-import { createTheme } from '@mui/system';
-import API from 'api';
-import { Container } from '../../components/Container/Container';
-import ContainerSection from '../../components/ContainerSection/ContainerSection';
-import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
-import Loader from '../../components/Loader/Loader';
-import MyRecipesList from '../../components/MyRecipesList/MyRecipesList';
-import { Paginator } from '../../components/Paginator/Paginator';
-import { NoSearchResults } from '../../components/SearchPage/NoSearchResults/NoSearchResults';
-import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
-import Title from '../../components/Title/Title';
+import { createTheme } from "@mui/system";
+import API from "../../api";
+import { Container } from "../../components/Container/Container";
+import ContainerSection from "../../components/ContainerSection/ContainerSection";
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
+import Loader from "../../components/Loader/Loader";
+import MyRecipesList from "../../components/MyRecipesList/MyRecipesList";
+import { Paginator } from "../../components/Paginator/Paginator";
+import { NoSearchResults } from "../../components/SearchPage/NoSearchResults/NoSearchResults";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
+import Title from "../../components/Title/Title";
 
-import { useEffect, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { useEffect, useState } from "react";
+import { ThemeProvider } from "styled-components";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#EBF3D4',
+      main: "#EBF3D4",
     },
   },
 });
@@ -39,7 +39,7 @@ const FavoritePage = () => {
         const response = await API.getFavorites({ page });
         const data = response.favoriteRecipeInfo;
         setPageQty(response.totalPages);
-        setFavoriteRecipes(prevState => [...data]);
+        setFavoriteRecipes((prevState) => [...data]);
       } catch (error) {
         console.log(error.message);
       } finally {
@@ -51,7 +51,7 @@ const FavoritePage = () => {
     }
   }, [removeRecipe, page]);
 
-  const removeRecipeId = async recipeId => {
+  const removeRecipeId = async (recipeId) => {
     // console.log(recipeId);
     try {
       const response = await API.removeFromFavorites(recipeId);

@@ -1,26 +1,26 @@
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme } from "@mui/material";
 
 // import MainTitle from 'components/MainTitle/MainTitle';
 // import { MyRecipesContainer } from './MyRecipesPage.styled';
 // import { MyRecipesContainer, TitleContainer } from './MyRecipesPage.styled';
-import { Container } from '../../components/Container/Container';
+import { Container } from "../../components/Container/Container";
 
-import { Paginator } from '../../components/Paginator/Paginator';
-import MyRecipesList from '../../components/MyRecipesList/MyRecipesList';
-import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
-import Title from '../../components/Title/Title';
-import ContainerSection from '../../components/ContainerSection/ContainerSection';
-import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
-import { useEffect, useState } from 'react';
-import API from 'api';
-import { useAuth } from 'hooks';
-import { NoSearchResults } from '../../components/SearchPage/NoSearchResults/NoSearchResults';
-import Loader from '../../components/Loader/Loader';
+import { Paginator } from "../../components/Paginator/Paginator";
+import MyRecipesList from "../../components/MyRecipesList/MyRecipesList";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
+import Title from "../../components/Title/Title";
+import ContainerSection from "../../components/ContainerSection/ContainerSection";
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
+import { useEffect, useState } from "react";
+import API from "../../api";
+import { useAuth } from "hooks";
+import { NoSearchResults } from "../../components/SearchPage/NoSearchResults/NoSearchResults";
+import Loader from "../../components/Loader/Loader";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#EBF3D4',
+      main: "#EBF3D4",
     },
   },
 });
@@ -58,7 +58,7 @@ const MyRecipesPage = () => {
     }
   }, [page, removeRecipe, user._id]);
 
-  const removeRecipeId = async recipeId => {
+  const removeRecipeId = async (recipeId) => {
     try {
       await API.deleteMyRecipe(recipeId);
       setRemoveRecipe(true);

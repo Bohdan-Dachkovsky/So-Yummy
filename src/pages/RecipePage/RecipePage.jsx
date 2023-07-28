@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 //import getRecipeById from 'api/recipeById';
-import { useParams } from 'react-router';
-import API from 'api';
-import { RecipePageHero } from '../../components/RecipePageHero/RecipePageHero';
-import { RecipeIngredientsList } from '../../components/RecipeIngredientsList/RecipeIngredientsList';
-import { RecipePreparation } from '../../components/RecipePreparation/RecipePreparation';
-import ThemeWrap from '../../components/SharedLayout/SharedLayoutStyled';
-import { FooterBgWrapper } from '../../components/FooterBgWrapper/FooterBgWrapper.styled';
+import { useParams } from "react-router";
+import API from "../../api";
+import { RecipePageHero } from "../../components/RecipePageHero/RecipePageHero";
+import { RecipeIngredientsList } from "../../components/RecipeIngredientsList/RecipeIngredientsList";
+import { RecipePreparation } from "../../components/RecipePreparation/RecipePreparation";
+import ThemeWrap from "../../components/SharedLayout/SharedLayoutStyled";
+import { FooterBgWrapper } from "../../components/FooterBgWrapper/FooterBgWrapper.styled";
 
 const RecipePage = () => {
   // const navigate = useNavigate();
@@ -14,16 +14,16 @@ const RecipePage = () => {
   // const [recipe, setRecipe] = useState(null);
   //const [hero, setHero] = useState(null);
   const [ingredients, setIngredients] = useState([]);
-  const [preparation, setPreparation] = useState('');
-  const [title, setTitle] = useState('');
-  const [descr, setDescr] = useState('');
-  const [time, setTime] = useState('');
+  const [preparation, setPreparation] = useState("");
+  const [title, setTitle] = useState("");
+  const [descr, setDescr] = useState("");
+  const [time, setTime] = useState("");
   const [isFavorite, setIsFavorite] = useState(false);
-  const [photo, setPhoto] = useState('');
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     //console.log(recipeId);
-    const getRecipe = async recipeId => {
+    const getRecipe = async (recipeId) => {
       try {
         const recipe = await API.getRecipeById(recipeId);
         // console.log(recipe);

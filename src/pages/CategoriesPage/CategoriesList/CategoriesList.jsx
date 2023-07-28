@@ -1,8 +1,8 @@
-import { Box, Tab, Tabs } from '@mui/material';
-import API from 'api';
-import Loader from '../../../components/Loader/Loader';
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Box, Tab, Tabs } from "@mui/material";
+import API from "../../../api";
+import Loader from "../../../components/Loader/Loader";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function CategoriesList({ onError }) {
   const [categoriesArr, setCategoriesArr] = useState([]);
@@ -39,30 +39,30 @@ export default function CategoriesList({ onError }) {
       {!loader && (
         <Box
           sx={{
-            width: '100%',
+            width: "100%",
           }}
         >
           <Tabs
             sx={{
               mt: 10,
-              borderBottom: '1px solid #eaeaea',
+              borderBottom: "1px solid #eaeaea",
             }}
             value={categoryName}
             onChange={handleChange}
             variant="scrollable"
             scrollButtons="auto"
           >
-            {categoriesArr?.map(categ => (
+            {categoriesArr?.map((categ) => (
               <Tab
                 sx={{
-                  py: { xs: '32px', md: '28px' },
-                  px: { xs: '14px', md: '28px' },
-                  textTransform: 'capitalize',
-                  color: '#BDBDBD',
-                  fontWeight: '400',
-                  lineHeight: '1',
-                  fontFamily: 'Poppins',
-                  fontSize: { xs: '14px', md: '18px' },
+                  py: { xs: "32px", md: "28px" },
+                  px: { xs: "14px", md: "28px" },
+                  textTransform: "capitalize",
+                  color: "#BDBDBD",
+                  fontWeight: "400",
+                  lineHeight: "1",
+                  fontFamily: "Poppins",
+                  fontSize: { xs: "14px", md: "18px" },
                 }}
                 key={categ}
                 value={categ.toLowerCase()}
